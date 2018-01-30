@@ -9,6 +9,8 @@
 
 This package is an extraction of the [Laravel's Illuminate\Support\Str](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Support/Str.php) class, including all helpers, repackaged to be agnostic and available to any PHP project. 
 
+It has its own namespace **(IlluminateAgnostic\Str)**, so you can even use om Laravel apps without risking a namespace conflict.
+
 You can find some documentation on the available helpers here: https://laravel.com/docs/5.5/helpers.
 
 ## Install
@@ -22,7 +24,7 @@ $ composer require pragmarx/ia-str
 ## Usage
 
 ``` php
-use IlluminateAgnostic\Arr;
+use IlluminateAgnostic\Str\Support\Str;
 
 Str::endsWith('Jönköping', 'ing')
 
