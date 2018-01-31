@@ -5,7 +5,7 @@ namespace Illuminate\Tests;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Support\Str;
 
-class SupportCollectionTest extends TestCase
+class StrTest extends TestCase
 {
     public function testPluralizer()
     {
