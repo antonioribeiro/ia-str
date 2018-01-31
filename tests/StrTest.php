@@ -5,7 +5,7 @@ namespace IlluminateAgnostic\Str\Tests;
 use PHPUnit\Framework\TestCase;
 use IlluminateAgnostic\Str\Support\Str;
 
-class SupportCollectionTest extends TestCase
+class StrTest extends TestCase
 {
     public function testPluralizer()
     {
