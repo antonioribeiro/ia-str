@@ -1,11 +1,18 @@
-# IlluminateAgnostic\Str
+# IlluminateAgnostic \ Str
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-<!-- [![Total Downloads][ico-downloads]][link-downloads] -->
-<!-- [![Quality Score][ico-code-quality]][link-code-quality] -->
+<p align="center">
+    <a href="https://packagist.org/packages/pragmarx/ia-str"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/pragmarx/ia-str.svg?style=flat-square"></a>
+    <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
+    <a href="https://scrutinizer-ci.com/g/antonioribeiro/ia-str/?branch=master"><img alt="Code Quality" src="https://img.shields.io/scrutinizer/g/antonioribeiro/ia-str.svg?style=flat-square"></a>
+    <a href="https://travis-ci.org/antonioribeiro/ia-str"><img alt="Build" src="https://img.shields.io/travis/antonioribeiro/ia-str.svg?style=flat-square"></a>
+    <a href="https://packagist.org/packages/pragmarx/ia-str"><img alt="Downloads" src="https://img.shields.io/packagist/dt/pragmarx/ia-str.svg?style=flat-square"></a>
+</p>
+<p align="center">
+    <a href="https://scrutinizer-ci.com/g/antonioribeiro/ia-str/?branch=master"><img alt="Coverage" src="https://img.shields.io/scrutinizer/coverage/g/antonioribeiro/ia-str.svg?style=flat-square"></a>
+    <a href="https://styleci.io/repos/119605663"><img alt="StyleCI" src="https://styleci.io/repos/119605663/shield"></a>
+    <!-- <a href="https://insight.sensiolabs.com/projects/156fbef1-b03f-4fca-ba97-57874b7a35bf"><img alt="SensioLabsInsight" src="https://img.shields.io/sensiolabs/i/156fbef1-b03f-4fca-ba97-57874b7a35bf.svg?style=flat-square"></a> -->
+    <a href="https://travis-ci.org/antonioribeiro/ia-str"><img alt="PHP" src="https://img.shields.io/badge/PHP-7.0%20--%207.2-brightgreen.svg?style=flat-square"></a>
+</p>
 
 This package is an extraction of the [Laravel's Illuminate\Support\Str](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Support/Str.php) class, including all helpers, repackaged to be agnostic and available to any PHP project. 
 
@@ -58,23 +65,3 @@ If you discover any security related issues, please email acr@antoniocarlosribei
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-[ico-version]: https://img.shields.io/packagist/v/pragmarx/ia-str.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-
-[ico-travis-waiting]: https://img.shields.io/travis/antonioribeiro/ia-str/master.svg?style=flat-square
-[ico-travis]: https://img.shields.io/badge/build-passing-green.svg?style=flat-square
-
-[ico-scrutinizer-waiting]: https://img.shields.io/scrutinizer/coverage/g/antonioribeiro/ia-str.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/badge/coverage-92%20%25-green.svg?style=flat-square
-
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/antonioribeiro/ia-str.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/pragmarx/ia-str.svg?style=flat-square
-
-[link-packagist]: https://packagist.org/packages/pragmarx/ia-str
-[link-travis]: https://travis-ci.org/antonioribeiro/ia-str
-[link-scrutinizer]: https://scrutinizer-ci.com/g/antonioribeiro/ia-str/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/antonioribeiro/ia-str
-[link-downloads]: https://packagist.org/packages/pragmarx/ia-str
-[link-author]: https://github.com/antonioribeiro
-[link-contributors]: ../../contributors
