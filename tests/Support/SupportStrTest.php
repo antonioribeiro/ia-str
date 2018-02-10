@@ -2,6 +2,7 @@
 
 namespace IlluminateAgnostic\Str\Tests\Support;
 
+use Ramsey\Uuid\Uuid;
 use IlluminateAgnostic\Str\Support\Str;
 use PHPUnit\Framework\TestCase;
 
@@ -284,6 +285,12 @@ class SupportStrTest extends TestCase
         $this->assertEquals('Laravel framework', Str::ucfirst('laravel framework'));
         $this->assertEquals('Мама', Str::ucfirst('мама'));
         $this->assertEquals('Мама мыла раму', Str::ucfirst('мама мыла раму'));
+    }
+
+    public function testUuid()
+    {
+        $this->assertInstanceOf(Uuid::class, Str::uuid());
+        $this->assertInstanceOf(Uuid::class, Str::orderedUuid());
     }
 }
 
