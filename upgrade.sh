@@ -77,10 +77,17 @@ carriageReturn="
 "
 
     classes=(
-        'Support/Str'
-        'Support/Pluralizer'
+        'Support/Arr'
+        'Support/Carbon'
+        'Support/Collection'
         'Support/Debug/Dumper'
         'Support/Debug/HtmlDumper'
+        'Support/HigherOrderCollectionProxy'
+        'Support/HigherOrderTapProxy'
+        'Support/HtmlString'
+        'Support/Optional'
+        'Support/Pluralizer'
+        'Support/Str'
     )
 
     traits=(
@@ -88,9 +95,15 @@ carriageReturn="
     )
 
     contracts=(
+        'Contracts/Support/Arrayable.php'
+        'Contracts/Support/Jsonable.php'
+        'Contracts/Support/Htmlable.php'
     )
 
     tests=(
+        'Support/SupportArrTest.php'
+        'Support/SupportCarbonTest.php'
+        'Support/SupportCollectionTest.php'
         'Support/SupportMacroableTest.php'
         'Support/SupportStrTest.php'
     )
