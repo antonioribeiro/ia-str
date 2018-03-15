@@ -5,7 +5,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Debug\Dumper;
 
-if (! class_exists(Illuminate\Support\Collection::class)) {
+if (! class_exists(Vanilla\Support\Collection::class)) {
     if (! function_exists('camel_case')) {
         /**
          * Convert a value to camel case.
