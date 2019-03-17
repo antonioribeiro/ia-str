@@ -5,8 +5,8 @@ use IlluminateAgnostic\Str\Support\Str;
 use IlluminateAgnostic\Str\Support\Collection;
 use IlluminateAgnostic\Str\Support\Debug\Dumper;
 
-if (! class_exists(Illuminate\Support\Collection::class)) {
-    if (! function_exists('camel_case')) {
+if (!class_exists(Illuminate\Support\Collection::class)) {
+    if (!function_exists('camel_case')) {
         /**
          * Convert a value to camel case.
          *
@@ -19,7 +19,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('collect')) {
+    if (!function_exists('collect')) {
         /**
          * Create a collection from the given value.
          *
@@ -32,7 +32,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('data_get')) {
+    if (!function_exists('data_get')) {
         /**
          * Get an item from an array or object using "dot" notation.
          *
@@ -49,20 +49,25 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
 
             $key = is_array($key) ? $key : explode('.', $key);
 
-            while (! is_null($segment = array_shift($key))) {
+            while (!is_null($segment = array_shift($key))) {
                 if ($segment === '*') {
                     if ($target instanceof Collection) {
                         $target = $target->all();
-                    } elseif (! is_array($target)) {
+                    } elseif (!is_array($target)) {
                         return value($default);
                     }
 
                     $result = Arr::pluck($target, $key);
 
-                    return in_array('*', $key) ? Arr::collapse($result) : $result;
+                    return in_array('*', $key)
+                        ? Arr::collapse($result)
+                        : $result;
                 }
 
-                if (Arr::accessible($target) && Arr::exists($target, $segment)) {
+                if (
+                    Arr::accessible($target) &&
+                    Arr::exists($target, $segment)
+                ) {
                     $target = $target[$segment];
                 } elseif (is_object($target) && isset($target->{$segment})) {
                     $target = $target->{$segment};
@@ -75,7 +80,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('ends_with')) {
+    if (!function_exists('ends_with')) {
         /**
          * Determine if a given string ends with a given substring.
          *
@@ -89,7 +94,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('kebab_case')) {
+    if (!function_exists('kebab_case')) {
         /**
          * Convert a string to kebab case.
          *
@@ -102,8 +107,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-
-    if (! function_exists('snake_case')) {
+    if (!function_exists('snake_case')) {
         /**
          * Convert a string to snake case.
          *
@@ -117,7 +121,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('starts_with')) {
+    if (!function_exists('starts_with')) {
         /**
          * Determine if a given string starts with a given substring.
          *
@@ -131,7 +135,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_after')) {
+    if (!function_exists('str_after')) {
         /**
          * Return the remainder of a string after a given value.
          *
@@ -145,7 +149,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_before')) {
+    if (!function_exists('str_before')) {
         /**
          * Get the portion of a string before a given value.
          *
@@ -159,7 +163,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_contains')) {
+    if (!function_exists('str_contains')) {
         /**
          * Determine if a given string contains a given substring.
          *
@@ -173,7 +177,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_finish')) {
+    if (!function_exists('str_finish')) {
         /**
          * Cap a string with a single instance of a given value.
          *
@@ -187,7 +191,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_is')) {
+    if (!function_exists('str_is')) {
         /**
          * Determine if a given string matches a given pattern.
          *
@@ -201,7 +205,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_limit')) {
+    if (!function_exists('str_limit')) {
         /**
          * Limit the number of characters in a string.
          *
@@ -216,7 +220,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_plural')) {
+    if (!function_exists('str_plural')) {
         /**
          * Get the plural form of an English word.
          *
@@ -230,7 +234,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_random')) {
+    if (!function_exists('str_random')) {
         /**
          * Generate a more truly "random" alpha-numeric string.
          *
@@ -245,7 +249,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_replace_array')) {
+    if (!function_exists('str_replace_array')) {
         /**
          * Replace a given value in the string sequentially with an array.
          *
@@ -260,7 +264,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_replace_first')) {
+    if (!function_exists('str_replace_first')) {
         /**
          * Replace the first occurrence of a given value in the string.
          *
@@ -275,7 +279,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_replace_last')) {
+    if (!function_exists('str_replace_last')) {
         /**
          * Replace the last occurrence of a given value in the string.
          *
@@ -290,7 +294,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_singular')) {
+    if (!function_exists('str_singular')) {
         /**
          * Get the singular form of an English word.
          *
@@ -303,7 +307,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_slug')) {
+    if (!function_exists('str_slug')) {
         /**
          * Generate a URL friendly "slug" from a given string.
          *
@@ -318,7 +322,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('str_start')) {
+    if (!function_exists('str_start')) {
         /**
          * Begin a string with a single instance of a given value.
          *
@@ -332,7 +336,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-    if (! function_exists('studly_case')) {
+    if (!function_exists('studly_case')) {
         /**
          * Convert a value to studly caps case.
          *
@@ -345,8 +349,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-
-    if (! function_exists('title_case')) {
+    if (!function_exists('title_case')) {
         /**
          * Convert a value to title case.
          *
@@ -359,8 +362,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-
-    if (! function_exists('value')) {
+    if (!function_exists('value')) {
         /**
          * Return the default value of the given value.
          *
@@ -373,8 +375,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
         }
     }
 
-
-    if (! function_exists('dd')) {
+    if (!function_exists('dd')) {
         /**
          * Dump the passed variables and end the script.
          *
@@ -386,7 +387,7 @@ if (! class_exists(Illuminate\Support\Collection::class)) {
             http_response_code(500);
 
             foreach ($args as $x) {
-                (new Dumper)->dump($x);
+                (new Dumper())->dump($x);
             }
 
             die(1);
