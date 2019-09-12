@@ -89,10 +89,13 @@ carriageReturn="
         'Support/Optional'
         'Support/Pluralizer'
         'Support/Str'
+        'Support/Enumerable'
+        'Support/LazyCollection'
     )
 
     traits=(
         'Support/Traits/Macroable.php'
+        'Support/Traits/EnumeratesValues.php'
     )
 
     contracts=(

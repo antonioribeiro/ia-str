@@ -13,6 +13,8 @@ $aliases = [
     Illuminate\Support\Optional::class => IlluminateAgnostic\Str\Support\Optional::class,
     Illuminate\Support\Pluralizer::class => IlluminateAgnostic\Str\Support\Pluralizer::class,
     Illuminate\Support\Str::class => IlluminateAgnostic\Str\Support\Str::class,
+    Illuminate\Support\Enumerable::class => IlluminateAgnostic\Str\Support\Enumerable::class,
+    Illuminate\Support\LazyCollection::class => IlluminateAgnostic\Str\Support\LazyCollection::class,
 
 ];
 

@@ -2,11 +2,11 @@
 
 namespace IlluminateAgnostic\Str\Support;
 
+use IlluminateAgnostic\Str\Support\Traits\Macroable;
+use Ramsey\Uuid\Codec\TimestampFirstCombCodec;
+use Ramsey\Uuid\Generator\CombGenerator;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidFactory;
-use IlluminateAgnostic\Str\Support\Traits\Macroable;
-use Ramsey\Uuid\Generator\CombGenerator;
-use Ramsey\Uuid\Codec\TimestampFirstCombCodec;
 
 class Str
 {
@@ -32,6 +32,13 @@ class Str
      * @var array
      */
     protected static $studlyCache = [];
+
+    /**
+     * The callback that should be used to generate UUIDs.
+     *
+     * @var callable
+     */
+    protected static $uuidFactory;
 
     /**
      * Return the remainder of a string after a given value.
@@ -566,7 +573,9 @@ class Str
      */
     public static function uuid()
     {
-        return Uuid::uuid4();
+        return static::$uuidFactory
+                    ? call_user_func(static::$uuidFactory)
+                    : Uuid::uuid4();
     }
 
     /**
@@ -576,7 +585,11 @@ class Str
      */
     public static function orderedUuid()
     {
-        $factory = new UuidFactory;
+        if (static::$uuidFactory) {
+            return call_user_func(static::$uuidFactory);
+        }
+
+        $factory = new UuidFactory();
 
         $factory->setRandomGenerator(new CombGenerator(
             $factory->getRandomGenerator(),
@@ -588,6 +601,27 @@ class Str
         ));
 
         return $factory->uuid4();
+    }
+
+    /**
+     * Set the callable that will be used to generate UUIDs.
+     *
+     * @param  callable
+     * @return void
+     */
+    public static function createUuidsUsing(callable $factory = null)
+    {
+        static::$uuidFactory = $factory;
+    }
+
+    /**
+     * Indicate that UUIDs should be created normally and not using a custom factory.
+     *
+     * @return void
+     */
+    public static function createUuidsNormally()
+    {
+        static::$uuidFactory = null;
     }
 
     /**
