@@ -11,7 +11,7 @@ if (!class_exists(Illuminate\Support\Collection::class)) {
          * Create a collection from the given value.
          *
          * @param  mixed  $value
-         * @return \IlluminateAgnostic\Str\Support\Collection|\Illuminate\Support\Collection
+         * @return \IlluminateAgnostic\StrAgnostic\Str\Support\Collection|\IlluminateAgnostic\Str\Support\Collection
          */
         function collect($value = null)
         {
